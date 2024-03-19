@@ -1273,6 +1273,7 @@
       <AdditionalOptions>/permissive- /Zc:twoPhase- %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>26493;26440;26477;26409</DisableSpecificWarnings>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release MFC MT|x64'">
