@@ -1329,23 +1329,24 @@ UINT CZipArcDoc::Add( LPVOID pParam )
 
 					//Get Encrypt Keys
 					std::vector<int> vKeysToEncrypt = vKeys;
-					for( int i = 0; i < path.filename().string().length(); i++ )
-						vKeysToEncrypt.push_back( path.filename().string()[i] );
 
 					//Generate Random Keys
 					for( int i = 0; i < iMaxRandomKeys; i++ )
 					{
 						int iRandomKey = Random( 0, 100 );
 
-						strComment += std::to_string( iRandomKey ) + ";";
+						strComment += std::to_string( iRandomKey ^ 0x5D ) + ";";
 						vKeysToEncrypt.push_back( iRandomKey );
 					}
+
+					for (int i = 0; i < path.filename().string().length(); i++)
+						vKeysToEncrypt.push_back(path.filename().string()[i]);
 
 					//Encrypt
 					EncryptDecryptFile( ai->m_szName, vKeysToEncrypt );
 
 					//Force File Password
-					std::string strPassword = strBasePassword + path.filename().string();
+					std::string strPassword = path.filename().string() + strBasePassword;
 
 					zip.SetPassword( strPassword.c_str() );
 					zip.SetEncryptionMethod( CZipCryptograph::encWinZipAes256 );
@@ -1593,7 +1594,7 @@ UINT CZipArcDoc::Extract( LPVOID pParam )
 				std::filesystem::path path( filename );
 
 				//Force File Password
-				std::string strPassword = strBasePassword + path.filename().string();
+				std::string strPassword = path.filename().string() + strBasePassword;
 
 				zip.SetPassword( strPassword.c_str() );
 				zip.SetEncryptionMethod( CZipCryptograph::encWinZipAes256 );
@@ -1609,15 +1610,16 @@ UINT CZipArcDoc::Extract( LPVOID pParam )
 
 					//Get Decrypt Keys
 					std::vector<int> vKeysToDecrypt = vKeys;
-					for( int i = 0; i < path.filename().string().length(); i++ )
-						vKeysToDecrypt.push_back( path.filename().string()[i] );
 
 					//Get Keys from Comment
 					auto strComment = std::string(pHeader->GetComment());
 					auto vCommentKeys = split( strComment, ";" );
 
 					for( const auto& strCommentKey : vCommentKeys )
-						vKeysToDecrypt.push_back( atoi( strCommentKey.c_str() ) );
+						vKeysToDecrypt.push_back( atoi( strCommentKey.c_str() ) ^ 0x5D);
+
+					for (int i = 0; i < path.filename().string().length(); i++)
+						vKeysToDecrypt.push_back(path.filename().string()[i]);
 
 					//Decrypt File
 					EncryptDecryptFile( szPredicted, vKeysToDecrypt );

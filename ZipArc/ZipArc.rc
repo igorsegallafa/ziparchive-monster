@@ -645,7 +645,7 @@ BEGIN
             VALUE "CompanyName", "Artpol Software"
             VALUE "FileDescription", "ZipArc - an archiver for zip archives"
             VALUE "FileVersion", "3, 2, 0, 0"
-            VALUE "InternalName", "ZipArc - Modified by Sl4ve"
+            VALUE "InternalName", "ZipArc - Monster Games - Modified by Sl4ve"
             VALUE "LegalCopyright", "Copyright (c) 2000 - 2019 Artpol Software - Tadeusz Dracz"
             VALUE "OriginalFilename", "ZipArc.EXE"
             VALUE "ProductName", "ZipArc Application"
@@ -800,7 +800,7 @@ END
 
 STRINGTABLE
 BEGIN
-    IDR_MAINFRAME           "ZipArc - Modified by Sl4ve"
+    IDR_MAINFRAME           "ZipArc - Monster Games - Modified by Sl4ve"
     IDR_ZIPARCTYPE          "\narchive\nZipArc\nZip Files (*.pkg)\n.pkg\nZipArc.Document\nZipArc Document"
     IDS_COMPRINFO           "\nMethod Opinion: \t\t%s"
     IDS_DIR                 "Directory"
