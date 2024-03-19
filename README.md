@@ -3,4 +3,6 @@
 3. Compile the solution
 
 - `ziparchive\Release MFC MT\ZipArc.exe` tool to manage package files
-- `ziparchive\Release MFC MT\ZipArchive.lib` library file to link in your project
+- `ziparchive\lib\ZipArchive.lib` library file to link in your project
+- `ziparchive\include\PackageFile.h` file to include in your project
+
