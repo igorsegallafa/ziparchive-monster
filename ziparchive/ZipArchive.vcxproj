@@ -689,7 +689,7 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release Unicode STL MT|Win32'">$(Configuration)\</IntDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug MFC MT|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug MFC MT|Win32'">$(Configuration)\</IntDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release MFC MT|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release MFC MT|Win32'">$(SolutionDir)\..\lib\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release MFC MT|Win32'">$(Configuration)\</IntDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug Unicode MFC MT|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug Unicode MFC MT|Win32'">$(Configuration)\</IntDir>
@@ -3522,7 +3522,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PackageFile.h" />
+    <ClInclude Include="..\include\PackageFile.h" />
     <ClInclude Include="str_obfuscator.h" />
     <ClInclude Include="_features.h" />
     <ClInclude Include="_platform.h" />

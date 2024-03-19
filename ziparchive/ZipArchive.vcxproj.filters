@@ -392,10 +392,10 @@
     <ClInclude Include="bzip2\bzlib_private.h">
       <Filter>bzip2</Filter>
     </ClInclude>
-    <ClInclude Include="PackageFile.h">
+    <ClInclude Include="str_obfuscator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="str_obfuscator.h">
+    <ClInclude Include="..\include\PackageFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

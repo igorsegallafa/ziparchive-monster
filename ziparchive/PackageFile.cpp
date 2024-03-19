@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "PackageFile.h"
+#include "../include/PackageFile.h"
 
 #include "ZipArchive.h"
 #include "ZipCollections.h"
