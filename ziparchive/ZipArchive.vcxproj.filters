@@ -177,6 +177,9 @@
     <ClCompile Include="bzip2\randtable.c">
       <Filter>bzip2</Filter>
     </ClCompile>
+    <ClCompile Include="PackageFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_features.h">
@@ -388,6 +391,12 @@
     </ClInclude>
     <ClInclude Include="bzip2\bzlib_private.h">
       <Filter>bzip2</Filter>
+    </ClInclude>
+    <ClInclude Include="PackageFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="str_obfuscator.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

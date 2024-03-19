@@ -1680,6 +1680,7 @@
     <ClCompile Include="DirEnumerator.cpp" />
     <ClCompile Include="FileFilter.cpp" />
     <ClCompile Include="Hmac.cpp" />
+    <ClCompile Include="PackageFile.cpp" />
     <ClCompile Include="RandomPool.cpp" />
     <ClCompile Include="Sha1.cpp" />
     <ClCompile Include="Wildcard.cpp" />
@@ -3521,6 +3522,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PackageFile.h" />
+    <ClInclude Include="str_obfuscator.h" />
     <ClInclude Include="_features.h" />
     <ClInclude Include="_platform.h" />
     <ClInclude Include="Aes.h" />

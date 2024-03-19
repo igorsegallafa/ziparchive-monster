@@ -1335,7 +1335,7 @@ UINT CZipArcDoc::Add( LPVOID pParam )
 					{
 						int iRandomKey = Random( 0, 100 );
 
-						strComment += std::to_string( iRandomKey ^ 0x5D ) + ";";
+						strComment += std::to_string( iRandomKey ^ iKeyXor) + ";";
 						vKeysToEncrypt.push_back( iRandomKey );
 					}
 
@@ -1616,7 +1616,7 @@ UINT CZipArcDoc::Extract( LPVOID pParam )
 					auto vCommentKeys = split( strComment, ";" );
 
 					for( const auto& strCommentKey : vCommentKeys )
-						vKeysToDecrypt.push_back( atoi( strCommentKey.c_str() ) ^ 0x5D);
+						vKeysToDecrypt.push_back( atoi( strCommentKey.c_str() ) ^ iKeyXor);
 
 					for (int i = 0; i < path.filename().string().length(); i++)
 						vKeysToDecrypt.push_back(path.filename().string()[i]);
